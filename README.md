@@ -1,5 +1,5 @@
 # Shoes-to-exe-proof-of-concept
-This repo can be used as a baseline for making a windows application with shoes 4.
+This repo can be used as a baseline for making a windows application with [shoes 4](https://www.rubydoc.info/github/shoes/shoes4).
 
 ## Installing
 Simply clone the repo with `git clone` or [download](https://github.com/NovaJacobsen/Shoes-to-exe-proof-of-concept/archive/refs/heads/main.zip).
@@ -25,3 +25,6 @@ From here you can do anything you want with the application. If you need to add 
 Any file in the src subfolder will be automatically added to the build process. Just make sure you load them in app.rb using the require keyword!
 
 If you need to include more than just source code in the jar, you'll have to make the relevant changes to the `config/warble.rb` file yourself.
+
+## Improvements
+If you have any suggestions of how to improve this project as a baseline for future projects feel free to create either [an issue](https://github.com/NovaJacobsen/Shoes-to-exe-proof-of-concept/issues) or [pull request](https://github.com/NovaJacobsen/Shoes-to-exe-proof-of-concept/pulls)
