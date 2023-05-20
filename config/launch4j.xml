@@ -1,17 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <launch4jConfig>
-  <dontWrapJar>true</dontWrapJar>
+  <dontWrapJar>false</dontWrapJar>
   <headerType>gui</headerType>
-  <jar>app.jar</jar>
-  <outfile>../build/Hello World.exe</outfile>
-  <errTitle>Error</errTitle>
-  <classPath>
-    <mainClass>org.jruby.JarBootstrapMain</mainClass>
-  </classPath>
+  <jar>..\build\Hello World.jar</jar>
+  <outfile>..\build\Hello World.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon></icon>
   <jre>
-    <path>C:\Program Files\Java\jdk-17</path>
-    <minVersion>17.0.1</minVersion>
-    <maxVersion>17.0.7</maxVersion>
-    <initialHeapSize>256</initialHeapSize>
-    <maxHeapSize>1024</maxHeapSize>
+    <path>%JAVA_HOME%;%PATH%</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
   </jre>
 </launch4jConfig>

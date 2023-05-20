@@ -7,6 +7,6 @@ platform :jruby do
   gem 'matrix'
   
   group :development do
-    gem 'warbler'
+    gem 'warbler', '~> 2.0'
   end
 end

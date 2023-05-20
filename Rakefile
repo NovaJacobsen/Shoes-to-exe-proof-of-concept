@@ -1,33 +1,33 @@
 require 'rake'
 
+source_dir = File.join(__dir__, 'src')
+output_dir = File.join(__dir__, 'build')
+jar_file = File.join(output_dir, 'Hello World.jar')
+exe_file = File.join(output_dir, 'Hello World.exe')
+launch4j_config = File.join(__dir__, 'config', 'launch4j.xml')
+
+directory output_dir
+
+file jar_file => [source_dir, 'app.rb', output_dir] do
+  sh "bundle exec warble"
+end
+
+file exe_file => [launch4j_config, jar_file] do
+  sh "launch4j '#{launch4j_config}'"
+end
+
 desc 'Run the application'
 task :run do
   sh 'bundle exec jruby app.rb'
 end
 
-desc 'Build the JAR file'
-task :jar do
-  src_files = FileList['src/**/*.rb']
-  dependencies = ['src', 'app.rb'] + src_files
-  output_dir = File.join(__dir__, 'build')
-  jar_flie = File.join(output_dir, 'myapp.jar')
-  
-  directory output_dir
+desc 'Build jar only'
+task :jar => jar_file
 
-  file jar_file => dependencies do
-    sh "bundle exec warbler --output-dir '#{output_dir}'"
-  end
-end
+desc 'Build project'
+task :build => exe_file
 
-desc 'Build the executable'
-task :build => :jar do
-  config_file = File.join(__dir__, 'config', 'launch4j.xml')
-  output_dir = File.join(__dir__, 'build')
-  exe_file = File.join(output_dir, 'myapp.exe')
-  
-  directory output_dir
-  
-  file exe_file => config_file do
-    sh "launch4j '#{config_file}'"
-  end
+desc 'Clean build artifacts'
+task :clean do
+  rm_rf output_dir
 end
