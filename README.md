@@ -2,7 +2,7 @@
 This repo can be used as a baseline for making a windows application with shoes 4.
 
 ## Installing
-Simply clone the repo with git clone or download.
+Simply clone the repo with git clone or [download](https://github.com/NovaJacobsen/Shoes-to-exe-proof-of-concept/archive/refs/heads/main.zip).
 
 You'll need jruby to run the project. All other dependencies can be installed with bundler, by running the command `bundle install` in the project directory.
 
